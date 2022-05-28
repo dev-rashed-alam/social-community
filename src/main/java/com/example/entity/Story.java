@@ -5,13 +5,14 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
-@Table(name = "tbl_status")
-public class Status implements Serializable {
+@Table(name = "tbl_story")
+public class Story implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "st_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -35,6 +36,10 @@ public class Status implements Serializable {
 
     @Column(name = "is_deleted")
     private int isDeleted;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "story_attachments", joinColumns = {@JoinColumn(name = "story_id", referencedColumnName = "st_id")}, inverseJoinColumns = {@JoinColumn(name = "attachment_id", referencedColumnName = "at_id")})
+    private List<Attachment> storyAttachments;
 
 
 }

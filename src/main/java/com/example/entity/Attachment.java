@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Attachment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "at_id")
     private Long id;
 
     @Column(name = "attachment_name")

@@ -26,4 +26,8 @@ public class User implements Serializable {
 
     @Column(name = "location_Id")
     private Long locationId;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "attachment_id", referencedColumnName = "at_id")
+    private Attachment attachment;
 }
