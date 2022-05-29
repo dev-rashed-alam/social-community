@@ -39,7 +39,7 @@ public class Story implements Serializable {
     @JoinTable(name = "story_attachments", joinColumns = {@JoinColumn(name = "story_id", referencedColumnName = "st_id")}, inverseJoinColumns = {@JoinColumn(name = "attachment_id", referencedColumnName = "at_id")})
     private List<Attachment> storyAttachments = new ArrayList<>();
 
-    @ManyToOne(targetEntity = User.class)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 

@@ -26,8 +26,9 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "location_Id")
-    private Long locationId;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", referencedColumnName = "loc_id")
+    private Location location;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "attachment_id", referencedColumnName = "at_id")
