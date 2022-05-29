@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,9 +19,6 @@ public class Story implements Serializable {
 
     @Column(name = "title")
     private String title;
-
-    @Column(name = "userId")
-    private Long userId;
 
     @Column(name = "description")
     private String description;
@@ -39,7 +37,10 @@ public class Story implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "story_attachments", joinColumns = {@JoinColumn(name = "story_id", referencedColumnName = "st_id")}, inverseJoinColumns = {@JoinColumn(name = "attachment_id", referencedColumnName = "at_id")})
-    private List<Attachment> storyAttachments;
+    private List<Attachment> storyAttachments = new ArrayList<>();
 
+    @ManyToOne(targetEntity = User.class)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
 }
