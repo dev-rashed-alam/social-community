@@ -19,6 +19,6 @@ public class Location implements Serializable {
     @Column(name = "location_name")
     private String locationName;
 
-    @OneToMany(orphanRemoval = true, mappedBy = "location")
+    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
     private List<User> users = new ArrayList<>();
 }
