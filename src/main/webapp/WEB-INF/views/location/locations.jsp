@@ -6,15 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Locations</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <jsp:include page="../include/css.jsp"/>
 </head>
 <body>
+<jsp:include page="../include/navbar.jsp"/>
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -24,7 +19,7 @@
                         <h2>Manage Locations</h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="/addLocation" class="btn btn-success">
+                        <a href="${pageContext.request.contextPath}/addLocation" class="btn btn-success">
                             <i class="material-icons">&#xE147;</i>
                             <span>Add New Location</span>
                         </a>

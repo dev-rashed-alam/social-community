@@ -5,6 +5,26 @@ body {
     font-size: 13px;
 }
 
+
+/** Navbar section goes here**/
+.navbar {
+    background-color: #16192c !important;
+}
+.navbar-brand {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+    font-size: 1rem !important;
+    white-space: nowrap !important;
+    color: #fff !important;
+}
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,.85) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    border-radius: 0 !important;
+}
+
 .table-responsive {
     margin: 30px 0;
 }

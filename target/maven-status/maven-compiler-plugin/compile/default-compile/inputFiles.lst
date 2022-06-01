@@ -1,7 +1,9 @@
 D:\RASHED\java\social-community\src\main\java\com\example\config\DbConfig.java
+D:\RASHED\java\social-community\src\main\java\com\example\dao\LocationDao.java
 D:\RASHED\java\social-community\src\main\java\com\example\dao\UserDao.java
 D:\RASHED\java\social-community\src\main\java\com\example\entity\Story.java
 D:\RASHED\java\social-community\src\main\java\com\example\config\RootConfig.java
+D:\RASHED\java\social-community\src\main\java\com\example\model\LocationModel.java
 D:\RASHED\java\social-community\src\main\java\com\example\entity\Attachment.java
 D:\RASHED\java\social-community\src\main\java\com\example\controller\RootController.java
 D:\RASHED\java\social-community\src\main\java\com\example\entity\Location.java

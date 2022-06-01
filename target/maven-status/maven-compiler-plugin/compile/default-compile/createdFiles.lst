@@ -5,9 +5,11 @@ com\example\controller\LocationController.class
 com\example\config\RootConfig.class
 com\example\config\DbConfig.class
 com\example\entity\Story.class
+com\example\model\LocationModel.class
 com\example\dao\UserDao.class
 com\example\config\AppInitializer.class
 com\example\dao\StoryDao.class
 com\example\dao\AttachmentDao.class
 com\example\controller\RootController.class
+com\example\dao\LocationDao.class
 com\example\entity\Location.class

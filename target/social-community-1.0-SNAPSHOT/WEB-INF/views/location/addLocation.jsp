@@ -8,15 +8,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Add Location</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <jsp:include page="../include/css.jsp"/>
 </head>
 <body>
+<jsp:include page="../include/navbar.jsp"/>
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">

@@ -23,7 +23,6 @@ public class LocationController {
     @GetMapping("/locations")
     public String getLocations(Model model) {
         List<Location> locations = locationDao.locations();
-        System.out.println(locations);
         model.addAttribute("locations", locations);
         return "/location/locations";
     }
