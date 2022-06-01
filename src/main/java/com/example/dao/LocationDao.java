@@ -22,7 +22,6 @@ public class LocationDao {
         Location location = new Location();
         location.setLocationName(locationModel.getLocationName());
         try {
-            System.out.println(location);
             session.save(location);
         } catch (Exception e) {
             session.getTransaction().rollback();
@@ -33,8 +32,14 @@ public class LocationDao {
     public List<Location> locations() {
         String hql = "FROM Location l";
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery(hql);
-        List<Location> locations = (List<Location>)query.list();
-        return locations;
+        Query<Location> query = session.createQuery(hql);
+        return query.list();
+    }
+
+    public Location findById(Long id) {
+        String hql = "FROM Location l where l.id=:locationId";
+        Query<Location> locationQuery = sessionFactory.getCurrentSession().createQuery(hql);
+        locationQuery.setParameter("locationId", id);
+        return locationQuery.getSingleResult();
     }
 }

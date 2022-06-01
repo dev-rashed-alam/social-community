@@ -16,18 +16,18 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Manage Locations</h2>
+                        <h2>Manage Users</h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="${pageContext.request.contextPath}/addLocation" class="btn btn-success">
+                        <a href="${pageContext.request.contextPath}/addUser" class="btn btn-success">
                             <i class="material-icons">&#xE147;</i>
-                            <span>Add New Location</span>
+                            <span>Add New User</span>
                         </a>
                     </div>
                 </div>
             </div>
             <c:choose>
-                <c:when test="${empty locations}">
+                <c:when test="${empty users}">
                     <p class="text-center">No Data Found!</p>
                 </c:when>
                 <c:otherwise>
@@ -35,14 +35,20 @@
                         <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Location Name</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Location</th>
+                            <th>Picture</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="location" items="${locations}" varStatus="counter">
+                        <c:forEach var="user" items="${users}" varStatus="counter">
                             <tr>
                                 <td>${counter.count}</td>
-                                <td>${location.locationName}</td>
+                                <td>${user.name}</td>
+                                <td>${user.email}</td>
+                                <td>${user.getLocation().getLocationName()}</td>
+                                <td>${user.getAttachment().getAttachmentPath()}</td>
                             </tr>
                         </c:forEach>
                         </tbody>
