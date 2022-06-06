@@ -24,6 +24,7 @@
             </div>
             <form:form
                     action="/saveUser"
+                    enctype="multipart/form-data"
                     method="post"
                     modelAttribute="user"
             >

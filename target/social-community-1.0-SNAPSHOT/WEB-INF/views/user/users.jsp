@@ -48,7 +48,14 @@
                                 <td>${user.name}</td>
                                 <td>${user.email}</td>
                                 <td>${user.getLocation().getLocationName()}</td>
-                                <td>${user.getAttachment().getAttachmentPath()}</td>
+                                <td>
+                                    <img
+                                            src="/file/get/${user.getAttachment().getId()}"
+                                            alt="img"
+                                            width="300"
+                                            height="auto"
+                                    />
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>

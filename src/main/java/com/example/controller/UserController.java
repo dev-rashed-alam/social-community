@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.dao.LocationDao;
 import com.example.dao.UserDao;
 import com.example.dto.requestDto.UserRequestDto;
+import com.example.entity.Attachment;
 import com.example.entity.Location;
 import com.example.entity.User;
 import com.example.model.UserModal;
@@ -11,11 +12,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -29,11 +29,13 @@ public class UserController {
     @Autowired
     LocationDao locationDao;
 
+    @Autowired
+    FileController fileController;
+
 
     @GetMapping("/users")
     public String getUsers(Model model) {
         List<User> users = userDao.findAll();
-        log.info(String.valueOf(users));
         model.addAttribute("users", users);
         return "user/users";
     }
@@ -48,10 +50,12 @@ public class UserController {
     }
 
     @PostMapping("/saveUser")
-    public String saveNewUser(@ModelAttribute("user") UserRequestDto userRequestDto, Model model) {
+    public String saveNewUser(@ModelAttribute("user") UserRequestDto userRequestDto, Model model, @RequestParam("attachment") MultipartFile file) throws IOException {
         Location location = locationDao.findById(userRequestDto.getLocationId());
         var user = new User();
         BeanUtils.copyProperties(userRequestDto, user);
+        Attachment attachment = fileController.uploadFile(file);
+        user.setAttachment(attachment);
         user.setLocation(location);
         userDao.save(user);
         return getUsers(model);

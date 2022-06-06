@@ -32,7 +32,7 @@ public class User implements Serializable {
     @JoinColumn(name = "location_id", referencedColumnName = "loc_id")
     private Location location;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "attachment_id", referencedColumnName = "at_id")
     private Attachment attachment;
 

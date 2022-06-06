@@ -1,18 +1,12 @@
 
 c
 3src/main/java/com/example/config/ServletConfig.java,b\a\ba5549f3e72bfb405d3f3014743e8624797037be
-`
-0src/main/java/com/example/config/RootConfig.java,d\2\d2e56d510c2aba83de3c800ce2d3d504016826b8
-d
-4src/main/java/com/example/config/AppInitializer.java,5\4\54cfe36ea7ce69ce7f375bac99bfb41b3143283e
 [
 +src/main/java/com/example/dao/StoryDao.java,4\f\4fcbe83a7693d75ca8a75dd23529bb85463215f2
 ^
 .src/main/java/com/example/config/DbConfig.java,d\0\d0961d894a2c725e34359e46ab194dd4b9cbc3dc
 b
 2src/main/java/com/example/model/LocationModel.java,b\3\b3a20173850da4ba900599e6afa333477e4e7fcc
-`
-0src/main/java/com/example/dao/AttachmentDao.java,4\7\47ab9d2b23fa72265f098c08050967e6feda9051
 d
 4src/main/webapp/WEB-INF/views/location/locations.jsp,1\b\1b56127ed558d6a39a9dd6f4cc1e74b7693e03c2
 V
@@ -21,8 +15,6 @@ V
 0src/main/webapp/WEB-INF/views/include/navbar.jsp,4\7\4763af4bafd5e193f25511c5dad36404219b9c33
 \
 ,src/main/webapp/WEB-INF/views/post/posts.jsp,f\c\fcf9962a4c363a352f7a8b2baaa8f115086c45f6
-h
-8src/main/java/com/example/controller/RootController.java,8\d\8ddc7c25c0f3a986cb8fe9f8384434fee840a330
 h
 8src/main/java/com/example/controller/PostController.java,6\4\64e3ab3bfae4bfa1c77c50084a8a9f3fe527de97
 _
@@ -35,13 +27,13 @@ Z
 *src/main/java/com/example/dao/UserDao.java,1\6\168e945b644e33bbdcff8867329b10d1e65443e6
 l
 <src/main/java/com/example/controller/LocationController.java,e\7\e7fa388ae0631bbdca327ee7ea27380c942ea1d8
-^
-.src/main/java/com/example/dao/LocationDao.java,b\0\b01202c8bfefda6f2a031462bc43ff9fbaf3155c
 l
 <src/main/java/com/example/dto/requestDto/UserRequestDto.java,b\2\b2ef9afca957142b247dc6130b29278224c2b077
 f
 6src/main/webapp/WEB-INF/views/location/addLocation.jsp,1\d\1d1fdf2f07b00508fcfadc31e2f0fd3c81ec7201
 ^
-.src/main/webapp/WEB-INF/views/user/addUser.jsp,b\b\bb08f751172b533351e5f3a14c46a304f8d4dcd7
-\
-,src/main/webapp/WEB-INF/views/user/users.jsp,7\6\76eb5256c8b5a812b0d9a7481e120ff83959500a
+.src/main/java/com/example/model/UserModal.java,c\7\c71e1e0b6791bfb1e262eb00701ac0296638032a
+^
+.src/main/java/com/example/entity/Location.java,0\a\0a42f81e7174c9c5744bc43962b930583654852a
+[
++src/main/java/com/example/entity/Story.java,1\8\184e8a48f79cea7b05372573b2ff73c4908f677a
