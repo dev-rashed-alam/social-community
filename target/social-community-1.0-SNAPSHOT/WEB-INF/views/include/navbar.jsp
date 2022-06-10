@@ -17,7 +17,10 @@
           <a class="nav-link" href="${pageContext.request.contextPath}/users">User</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/posts">Post</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/posts">View Story</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="${pageContext.request.contextPath}/addPost">Add Story</a>
         </li>
       </ul>
     </div>

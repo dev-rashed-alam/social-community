@@ -11,44 +11,18 @@
 <body>
 <jsp:include page="../include/navbar.jsp"/>
 <div class="container-xl">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h2>Manage Locations</h2>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="${pageContext.request.contextPath}/addLocation" class="btn btn-success">
-                            <i class="material-icons">&#xE147;</i>
-                            <span>Add New Location</span>
-                        </a>
+    <div class="row mt-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <c:forEach var="post" items="${posts}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/file/get/${post.getStoryAttachments()[0].getId()}" class="card-img-top" alt="post_img">
+                    <div class="card-body">
+                        <h5 class="card-title">${post.title}</h5>
+                        <p class="card-text">${post.description}</p>
                     </div>
                 </div>
-            </div>
-            <c:choose>
-                <c:when test="${empty locations}">
-                    <p class="text-center">No Data Found!</p>
-                </c:when>
-                <c:otherwise>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>SL</th>
-                            <th>Location Name</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="location" items="${locations}" varStatus="counter">
-                            <tr>
-                                <td>${counter.count}</td>
-                                <td>${location.locationName}</td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </c:otherwise>
-            </c:choose>
+            </c:forEach>
         </div>
     </div>
 </div>

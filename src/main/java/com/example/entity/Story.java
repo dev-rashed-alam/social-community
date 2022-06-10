@@ -37,7 +37,7 @@ public class Story implements Serializable {
     @Column(name = "is_deleted")
     private int isDeleted;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "story_attachments", joinColumns = {@JoinColumn(name = "story_id", referencedColumnName = "st_id")}, inverseJoinColumns = {@JoinColumn(name = "attachment_id", referencedColumnName = "at_id")})
     private List<Attachment> storyAttachments = new ArrayList<>();
 
