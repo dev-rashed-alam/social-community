@@ -17,6 +17,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -37,6 +39,25 @@ public class FileController {
         attachment.setType(extension);
         attachment.setAttachmentName(fileName);
         return attachment;
+    }
+
+    @PostMapping("/file/uploadMultiple")
+    public List<Attachment> uploadFile(@RequestParam("attachment") MultipartFile[] files) throws IOException {
+        List<Attachment> attachmentList = new ArrayList<>();
+        for (MultipartFile file : files) {
+            String fileName = file.getOriginalFilename();
+            String extension = FilenameUtils.getExtension(fileName);
+            String filePath = Properties.USER_UPLOAD_LOCATION + fileName;
+            Path path = Paths.get(filePath);
+            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+            Attachment attachment = new Attachment();
+            attachment.setAttachmentPath(filePath);
+            attachment.setType(extension);
+            attachment.setAttachmentName(fileName);
+            attachmentList.add(attachment);
+        }
+
+        return attachmentList;
     }
 
     @GetMapping("/file/get/{id}")

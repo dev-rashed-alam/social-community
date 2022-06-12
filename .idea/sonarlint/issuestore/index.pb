@@ -35,8 +35,6 @@ d
 0src/main/java/com/example/entity/Attachment.java,2\4\24b113ec7e003cdee4bded861bf18365046ed385
 Y
 )src/main/java/com/example/Properties.java,2\6\26281266e3c0a8031db0189aa9ca4744ce8230d3
-h
-8src/main/java/com/example/controller/FileController.java,a\4\a43fd71f93253cc9cf79d4eeb5b63a27cc730779
 f
 6src/main/webapp/WEB-INF/views/location/addLocation.jsp,1\d\1d1fdf2f07b00508fcfadc31e2f0fd3c81ec7201
 ^
@@ -45,12 +43,8 @@ f
 ,src/main/webapp/WEB-INF/views/include/js.jsp,8\1\8140e638c643664b3e8efc97fe3eed8cebee5fa2
 m
 =src/main/java/com/example/dto/requestDto/StoryRequestDto.java,c\3\c3ba140211e3f6d8161bffd90a2df93c428bcf92
-_
-/src/main/webapp/WEB-INF/resources/css/style.css,9\e\9e780b18fcad87bb39dd0217b183c93189c95b81
 `
 0src/main/webapp/WEB-INF/views/include/navbar.jsp,4\7\4763af4bafd5e193f25511c5dad36404219b9c33
-^
-.src/main/webapp/WEB-INF/views/post/addPost.jsp,7\a\7a39b46d73999b368ee719ffe5780cf76433d8e9
 ^
 .src/main/java/com/example/dao/LocationDao.java,b\0\b01202c8bfefda6f2a031462bc43ff9fbaf3155c
 Z
@@ -59,7 +53,3 @@ Z
 +src/main/java/com/example/dao/StoryDao.java,4\f\4fcbe83a7693d75ca8a75dd23529bb85463215f2
 Z
 *src/main/java/com/example/entity/User.java,4\1\41a2f9e23deea715e9240664495754d8b68f8f1b
-h
-8src/main/java/com/example/controller/UserController.java,3\c\3c4acb7f5875c1af44221b5ad0555efee6eaceda
-h
-8src/main/java/com/example/controller/PostController.java,6\4\64e3ab3bfae4bfa1c77c50084a8a9f3fe527de97

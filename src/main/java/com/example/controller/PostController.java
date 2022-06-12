@@ -49,15 +49,11 @@ public class PostController {
     }
 
     @PostMapping("/savePost")
-    public String saveNewPost(@ModelAttribute("post") StoryRequestDto storyRequestDto, Model model, @RequestParam("attachment") MultipartFile file) throws IOException {
+    public String saveNewPost(@ModelAttribute("post") StoryRequestDto storyRequestDto, Model model, @RequestParam("attachment") MultipartFile[] file) throws IOException {
         Location location = locationDao.findById(storyRequestDto.getLocationId());
         Story story = new Story();
         BeanUtils.copyProperties(storyRequestDto, story);
-        Attachment attachment = fileController.uploadFile(file);
-
-        List<Attachment> attachments = new ArrayList<>();
-        attachments.add(attachment);
-
+        List<Attachment> attachments = fileController.uploadFile(file);
         story.setPrivacy("Public");
         story.setLocationId(location.getId());
         story.setStoryAttachments(attachments);

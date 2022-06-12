@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group file-field">
-                            <input class="form-control" type="file" name="attachment" id="contact-attachment">
+                            <input class="form-control" type="file" multiple name="attachment" id="contact-attachment">
                             <label class="form-label" for="contact-attachment">
                                 <i class="fas fa-folder mr-2"></i>
                                 Upload Attachment...

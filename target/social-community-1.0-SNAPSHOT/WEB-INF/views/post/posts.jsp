@@ -12,17 +12,26 @@
 <jsp:include page="../include/navbar.jsp"/>
 <div class="container-xl">
     <div class="row mt-2">
-        <div class="col-md-2"></div>
-        <div class="col-md-10">
-            <c:forEach var="post" items="${posts}">
-                <div class="card" style="width: 18rem;">
-                    <img src="/file/get/${post.getStoryAttachments()[0].getId()}" class="card-img-top" alt="post_img">
-                    <div class="card-body">
-                        <h5 class="card-title">${post.title}</h5>
-                        <p class="card-text">${post.description}</p>
+        <div class="col-md-12">
+            <div class="row">
+                <c:forEach var="post" items="${posts}">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="custom-card-img">
+                                <img
+                                        src="/file/get/${post.getStoryAttachments()[0].getId()}"
+                                        class="card-img-top"
+                                        alt="post_img"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">${post.title}</h5>
+                                <p class="card-text">${post.description}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
+                </c:forEach>
+            </div>
         </div>
     </div>
 </div>
