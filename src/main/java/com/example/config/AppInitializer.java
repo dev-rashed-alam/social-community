@@ -1,6 +1,7 @@
 package com.example.config;
 
 import com.example.Properties;
+import com.example.config.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -19,7 +20,7 @@ public class AppInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         // root config
         AnnotationConfigWebApplicationContext objRootConfig = new AnnotationConfigWebApplicationContext();
-        objRootConfig.register(RootConfig.class, DbConfig.class);
+        objRootConfig.register(RootConfig.class, DbConfig.class, SecurityConfig.class);
         objRootConfig.refresh();
         servletContext.addListener(new ContextLoaderListener(objRootConfig));
 
