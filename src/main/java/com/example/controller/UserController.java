@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.config.Role;
 import com.example.dao.LocationDao;
 import com.example.dao.UserDao;
 import com.example.dto.requestDto.UserRequestDto;
@@ -10,6 +11,7 @@ import com.example.model.UserModal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +33,9 @@ public class UserController {
 
     @Autowired
     FileController fileController;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     @GetMapping("/users")
@@ -55,8 +60,10 @@ public class UserController {
         var user = new User();
         BeanUtils.copyProperties(userRequestDto, user);
         Attachment attachment = fileController.uploadFile(file);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setAttachment(attachment);
         user.setLocation(location);
+        user.setRole(Role.ROLE_ADMIN);
         userDao.save(user);
         return getUsers(model);
     }

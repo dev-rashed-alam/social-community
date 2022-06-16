@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.example.config.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,4 +39,8 @@ public class User implements Serializable {
 
     @OneToMany(orphanRemoval = true, mappedBy = "user")
     private List<Story> stories = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
 }

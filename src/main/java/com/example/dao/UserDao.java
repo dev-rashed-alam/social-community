@@ -35,4 +35,12 @@ public class UserDao {
         return query.list();
     }
 
+    public User findByUserEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "FROM User u where u.email=:email";
+        Query<User> userQuery = sessionFactory.getCurrentSession().createQuery(hql);
+        userQuery.setParameter("email", email);
+        return userQuery.getSingleResult();
+    }
+
 }
