@@ -22,7 +22,7 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -38,14 +38,14 @@ public class UserController {
     PasswordEncoder passwordEncoder;
 
 
-    @GetMapping("/users")
+    @GetMapping("/all")
     public String getUsers(Model model) {
         List<User> users = userDao.findAll();
         model.addAttribute("users", users);
         return "user/users";
     }
 
-    @GetMapping("/addUser")
+    @GetMapping("/add")
     public String addNewUser(Model model) {
         UserModal userModal = new UserModal();
         List<Location> locations = locationDao.locations();
@@ -54,7 +54,7 @@ public class UserController {
         return "user/addUser";
     }
 
-    @PostMapping("/saveUser")
+    @PostMapping("/save")
     public String saveNewUser(@ModelAttribute("user") UserRequestDto userRequestDto, Model model, @RequestParam("attachment") MultipartFile file) throws IOException {
         Location location = locationDao.findById(userRequestDto.getLocationId());
         var user = new User();

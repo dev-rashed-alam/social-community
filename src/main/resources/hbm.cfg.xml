@@ -9,9 +9,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">rashed</property>
+        <property name="hibernate.connection.password">123456</property>
 
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:6432/social_community</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/social_community</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.connection.autocommit">true</property>
         <property name="hibernate.c3p0.min_size">5</property>

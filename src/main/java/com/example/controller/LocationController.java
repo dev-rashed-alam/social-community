@@ -14,27 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/location")
 public class LocationController {
 
     @Autowired
     LocationDao locationDao;
 
-    @GetMapping("/locations")
+    @GetMapping("/all")
     public String getLocations(Model model) {
         List<Location> locations = locationDao.locations();
         model.addAttribute("locations", locations);
         return "/location/locations";
     }
 
-    @GetMapping("/addLocation")
+    @GetMapping("/add")
     public String addLocation(Model model) {
         LocationModel locationModel = new LocationModel();
         model.addAttribute("location", locationModel);
         return "/location/addLocation";
     }
 
-    @PostMapping("/saveLocation")
+    @PostMapping("/save")
     public String saveLocation(@ModelAttribute("location") LocationModel locationModel, Model model) {
         locationDao.save(locationModel);
         return getLocations(model);
