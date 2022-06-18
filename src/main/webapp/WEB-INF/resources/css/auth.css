@@ -1,0 +1,90 @@
+body {
+    background-color: #1b1f27;
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow: hidden;
+    /* ocultar barra de rolagem */
+}
+
+.area-login {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    color: #cbd0f7;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #181920;
+    width: 340px;
+    height: 350px;
+    border-radius: 8px;
+    padding: 35px;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login input {
+    margin-top: 15px;
+    background-color: #252a34;
+    color: #cbd0f7;
+    border: none;
+    height: 45px;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.login img {
+    width: 65px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+input::placeholder {
+    color: #cbd0f7;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+form [type="submit"] {
+    display: inline-block;
+    background-color: #5568fe;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 25px 0;
+    cursor: pointer;
+
+    opacity: 0.8;
+}
+
+form [type="submit"]:hover {
+    opacity: 1;
+}
+
+p {
+    color: #cbd0f7;
+}
+
+p a {
+    color: #5568fe;
+    text-decoration: none;
+    font-weight: 500;
+}

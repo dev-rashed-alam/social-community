@@ -39,11 +39,19 @@ public class SecurityConfig {
                 .csrf().disable()
                 .cors().disable()
                 .authorizeRequests()
-                .antMatchers("/user/**")
+                .antMatchers("/user/**","/css/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin(withDefaults())
+                .formLogin(form -> form
+                        .loginPage("/auth/login")
+                        .permitAll()
+                        .usernameParameter("email")
+                        .passwordParameter("password")
+                        .loginProcessingUrl("/login-process")
+                        .defaultSuccessUrl("/")
+                        .permitAll()
+                )
                 .build();
     }
 
