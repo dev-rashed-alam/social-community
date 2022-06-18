@@ -19,7 +19,7 @@
                         <h2>Manage Locations</h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="${pageContext.request.contextPath}/addLocation" class="btn btn-success">
+                        <a href="${pageContext.request.contextPath}/location/add" class="btn btn-success">
                             <i class="material-icons">&#xE147;</i>
                             <span>Add New Location</span>
                         </a>

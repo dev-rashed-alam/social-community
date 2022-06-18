@@ -21,13 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/file")
 public class FileController {
 
     @Autowired
     AttachmentDao attachmentDao;
 
-    @PostMapping("/file/upload")
+    @PostMapping("/upload")
     public Attachment uploadFile(@RequestParam("attachment") MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
         String extension = FilenameUtils.getExtension(fileName);
@@ -41,7 +41,7 @@ public class FileController {
         return attachment;
     }
 
-    @PostMapping("/file/uploadMultiple")
+    @PostMapping("/uploadMultiple")
     public List<Attachment> uploadFile(@RequestParam("attachment") MultipartFile[] files) throws IOException {
         List<Attachment> attachmentList = new ArrayList<>();
         for (MultipartFile file : files) {
@@ -60,7 +60,7 @@ public class FileController {
         return attachmentList;
     }
 
-    @GetMapping("/file/get/{id}")
+    @GetMapping("/get/{id}")
     public void getFile(@PathVariable("id") Long id, HttpServletResponse response) throws IOException {
         Attachment attachment = attachmentDao.findById(id);
         File file = new File(attachment.getAttachmentPath());

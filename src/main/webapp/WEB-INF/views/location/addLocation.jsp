@@ -23,7 +23,7 @@
                 </div>
             </div>
             <form:form
-                    action="/saveLocation"
+                    action="/location/save"
                     method="post"
                     modelAttribute="location"
             >

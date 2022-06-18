@@ -11,16 +11,16 @@
           <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/locations">Location</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/location/all">Location</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/users">User</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/user/all">User</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/posts">View Story</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/post/all">View Story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="${pageContext.request.contextPath}/addPost">Add Story</a>
+          <a class="nav-link" href="${pageContext.request.contextPath}/post/add">Add Story</a>
         </li>
       </ul>
     </div>

@@ -19,7 +19,7 @@
                         <h2>Manage Users</h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="${pageContext.request.contextPath}/addUser" class="btn btn-success">
+                        <a href="${pageContext.request.contextPath}/user/add" class="btn btn-success">
                             <i class="material-icons">&#xE147;</i>
                             <span>Add New User</span>
                         </a>

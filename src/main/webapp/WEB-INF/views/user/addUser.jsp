@@ -23,7 +23,7 @@
                 </div>
             </div>
             <form:form
-                    action="/saveUser"
+                    action="/user/save"
                     enctype="multipart/form-data"
                     method="post"
                     modelAttribute="user"

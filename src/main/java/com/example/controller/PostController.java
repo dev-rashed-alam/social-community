@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/post")
 public class PostController {
 
     @Autowired
@@ -32,14 +32,14 @@ public class PostController {
     @Autowired
     StoryDao storyDao;
 
-    @GetMapping("/posts")
+    @GetMapping("/all")
     public String getPosts(Model model) {
         List<Story> posts = storyDao.findAll();
         model.addAttribute("posts", posts);
         return "post/posts";
     }
 
-    @GetMapping("/addPost")
+    @GetMapping("/add")
     public String addNewPost(Model model) {
         Story story = new Story();
         List<Location> locations = locationDao.locations();
@@ -48,7 +48,7 @@ public class PostController {
         return "post/addPost";
     }
 
-    @PostMapping("/savePost")
+    @PostMapping("/save")
     public String saveNewPost(@ModelAttribute("post") StoryRequestDto storyRequestDto, Model model, @RequestParam("attachment") MultipartFile[] file) throws IOException {
         Location location = locationDao.findById(storyRequestDto.getLocationId());
         Story story = new Story();

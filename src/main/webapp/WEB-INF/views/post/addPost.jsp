@@ -23,7 +23,7 @@
                 </div>
             </div>
             <form:form
-                    action="/savePost"
+                    action="/post/save"
                     enctype="multipart/form-data"
                     method="post"
                     modelAttribute="story"
