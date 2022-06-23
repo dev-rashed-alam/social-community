@@ -37,9 +37,9 @@
                                     value="${user.name}"
                                     type="text"
                                     class="form-control"
-                                    required="true"
                             />
                         </div>
+                        <form:errors path="name" cssClass="text-danger"/>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -49,9 +49,9 @@
                                     value="${user.email}"
                                     type="text"
                                     class="form-control"
-                                    required="true"
                             />
                         </div>
+                        <form:errors path="email" cssClass="text-danger"/>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -61,9 +61,9 @@
                                     value="${user.password}"
                                     type="password"
                                     class="form-control"
-                                    required="true"
                             />
                         </div>
+                        <form:errors path="password" cssClass="text-danger"/>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">

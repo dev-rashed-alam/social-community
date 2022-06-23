@@ -14,15 +14,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
 @Slf4j
 @Controller
 @RequestMapping("/user")
+@Validated
 public class UserController {
 
     @Autowired
@@ -55,7 +59,11 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public String saveNewUser(@ModelAttribute("user") UserRequestDto userRequestDto, Model model, @RequestParam("attachment") MultipartFile file) throws IOException {
+    public String saveNewUser(@Valid @ModelAttribute("user") UserRequestDto userRequestDto, BindingResult bindingResult, Model model, @RequestParam("attachment") MultipartFile file) throws IOException {
+        if(bindingResult.hasErrors()){
+            return "user/addUser";
+        }
+
         Location location = locationDao.findById(userRequestDto.getLocationId());
         var user = new User();
         BeanUtils.copyProperties(userRequestDto, user);
